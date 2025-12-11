@@ -17,18 +17,18 @@ const bundeslaender = [
   "Bayern",
   "Berlin",
   "Mecklenburg-Vorpommern",
-  "Bremen",
+  "Rheinland-Pfalz",
   "Hamburg",
   "Hessen",
   "Brandenburg",
-  "Niedersachsen",
   "Nordrhein-Westfalen",
-  "Rheinland-Pfalz",
+  "Niedersachsen",
+  "Bremen",
   "Saarland",
-  "Sachsen",
   "Sachsen-Anhalt",
-  "Schleswig-Holstein",
+  "Sachsen",
   "Thüringen",
+  "Schleswig-Holstein",
 ];
 
 const initialStaedte = [
