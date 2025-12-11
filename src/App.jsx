@@ -9,6 +9,8 @@ import {
 } from "@dnd-kit/core";
 import jsPDF from "jspdf";
 import "./App.css";
+import "./inputfeldstyle.css";
+
 
 const bundeslaender = [
   "Baden-Württemberg",
@@ -185,7 +187,15 @@ export default function App() {
       </h3>
 
       <div style={{ display: "flex", width: "70%", justifyContent: "space-between", marginBottom: "20px", alignItems: "center", flexWrap: "wrap" }}>
-      <input  className="user-input"  placeholder="Name, Datum, Zusatz"  value={userInfo.name}   onChange={(e) => setUserInfo({ ...userInfo, name: e.target.value })}/>
+      <input
+  className="userInput"
+  placeholder="Name, Datum, Zusatz"
+  value={userInfo.name}
+  onChange={(e) =>
+    setUserInfo({ ...userInfo, name: e.target.value })
+  }
+/>
+
         <div style={{ fontSize: "20px" }}>Punkte : {punkte}</div>
         <button onClick={downloadPDF} className="download-button">Ergebnis downloaden</button>
       </div>

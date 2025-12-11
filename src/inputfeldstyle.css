@@ -1,0 +1,37 @@
+.userInput {
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.78);
+  --btn-color: rgb(100, 61, 136);
+  width: 16%;
+  padding: 12px 20px 8px;
+
+  font-size: 16px;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(235, 229, 229);                       
+  background-color: #050008ff;            
+  border-radius: 0.8em;
+  text-align: center;
+     
+  box-shadow:
+  0 0 0.2em 0.2em var(--glow-color),
+    0 0 2em 0.2em var(--glow-spread-color),
+    inset 0 0 0.2em 0.2em var(--glow-color);
+  outline: none;
+  transition: all 0.2s ease;
+   border: 4px solid rgb(60, 53, 59);
+  
+}
+
+.userInput:focus {
+  outline: none;
+  border-color: #5a055fff;            /* goldener Fokus */
+  box-shadow: 0 2px 8px rgba(191,123,255,0.5);
+}
+
+.userInput:hover {
+  border-color: #888;
+}
+
+.userInput:focus::placeholder {
+  color:transparent;}
