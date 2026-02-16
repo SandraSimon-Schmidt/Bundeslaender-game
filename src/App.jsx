@@ -188,7 +188,7 @@ export default function App() {
         Sobald du die erste Stadt ziehst, beginnt die Spielzeit und endet, sobald alle Städte zugeordnet sind.
       </h3>
 
-      <div style={{ display: "flex", width: "70%", justifyContent: "space-between", marginBottom: "20px", alignItems: "center", flexWrap: "wrap" }}>
+      <div className= "top">
       <input
   className="userInput"
   placeholder="Name, Datum, Zusatz"
@@ -203,7 +203,7 @@ export default function App() {
       </div>
 
       <DndContext sensors={sensors} onDragStart={handleDragStart} onDragOver={handleDragOver} onDragEnd={handleDragEnd}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", width: "85%" }}>
+        <div className="main-grid" >
           <div className="bundeslaender-grid">
             {bundeslaender.map((b) => (
               <DroppableItem
@@ -217,7 +217,7 @@ export default function App() {
             ))}
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "8px" }}>
+          <div className="staedte-grid" >
             {staedte.map((s) => (
               <DraggableItem key={s} id={s}><div className="stadt-button">{s}</div></DraggableItem>
             ))}

@@ -7,13 +7,11 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2rem;
-  line-height: 0.3;
-}
+
 
 html, body {
-  overflow: hidden;
+  overflow-y: auto; /* statt hidden */
+  min-height: 100vh;
 }
 
 

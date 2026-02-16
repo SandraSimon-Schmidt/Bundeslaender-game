@@ -1,3 +1,15 @@
+h1 {
+  font-size: 3.2rem;
+  line-height: 0.3;
+}
+.top{
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
 /* --- 🌆 Städte (Glow-Stil, kompakt) --- */
 .stadt-button {
   --glow-color: rgb(217, 176, 255);
@@ -85,7 +97,35 @@
   word-break: break-word;
 }
 
+.main-grid {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 40px; 
+  width: 85%;}
+
+.staedte-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
 /* --- Grid für Bundesländer mit template-areas --- */
+.bw { grid-area: bw; }
+.b { grid-area: b; }
+.ber { grid-area: ber; }
+.mv { grid-area: mv; }
+.bremen { grid-area: bremen; }
+.hh { grid-area: hh; }
+.hessen { grid-area: hessen; }
+.bran { grid-area: bran; }
+.nds { grid-area: nds; }
+.nrw { grid-area: nrw; }
+.rp { grid-area: rp; }
+.saar { grid-area: saar; }
+.sachsen { grid-area: sachsen; }
+.sa { grid-area: sa; }
+.sh { grid-area: sh; }
+.thu { grid-area: thu; }
+
 .bundeslaender-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(160px, 1fr));
@@ -98,6 +138,7 @@
     "nds nrw rp saar"
     "sachsen sa sh thu";
 }
+
 .user-input {
   width: 25%;
   padding: 8px 12px;
@@ -113,4 +154,102 @@
 .user-input:focus {
   border-color: #fbbf24;            /* goldener Fokus */
   box-shadow: 0 2px 8px rgba(191,123,255,0.5);
+}
+
+@media (max-width: 1400px) {
+  .staedte-grid { grid-template-columns: repeat(3, 1fr); }
+  .bundeslaender-grid {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+      "thu b ber"
+      "sachsen bremen hh"
+      "hessen bran nds"
+      "nrw rp saar"
+      "mv sa sh"
+      "bw bw bw"; /* letzte Zeile füllen */
+  }
+}
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 2.3rem;
+    line-height: 0.8;
+  }
+   .staedte-grid { grid-template-columns: repeat(2, 1fr); }
+  .bundeslaender-grid {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    grid-template-rows: repeat(8, auto);
+    grid-template-areas:
+      "bw mv"
+      "ber b"
+      "bremen hh"
+      "hessen bran"
+      "nds thu"
+      "rp saar"
+      "sachsen sa"
+      "sh nrw";
+  }
+}
+@media (max-width: 800px) {
+   h1 {
+    font-size: 2.0rem;
+    line-height: 0.8;
+    flex-wrap: wrap;
+    text-align: center;}
+   
+  .top{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  gap: 15px;
+}
+  .staedte-grid { grid-template-columns: repeat(2, 1fr); }
+  .bundeslaender-grid {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    grid-template-rows: repeat(8, auto);
+    grid-template-areas:
+      "bw mv"
+      "ber b"
+      "bremen hh"
+      "hessen bran"
+      "nds thu"
+      "rp saar"
+      "sachsen sa"
+      "sh nrw";
+  }
+}
+
+@media (max-width: 650px) {
+  .staedte-grid { grid-template-columns: repeat(1, 1fr); }
+  .bundeslaender-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(16, auto);
+    grid-template-areas:
+      "bw"
+      "mv"
+      "b"
+      "ber"
+      "bremen"
+      "hh"
+      "hessen"
+      "bran"
+      "nds"
+      "nrw"
+      "rp"
+      "saar"
+      "sachsen"
+      "sa"
+      "sh"
+      "thu";
+  }
+}
+@media (max-width: 450px) {
+  .main-grid {
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+    width: 90%;
+  }
 }
