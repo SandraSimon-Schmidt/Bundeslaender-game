@@ -82,7 +82,7 @@ function DraggableItem({ id, children }) {
     cursor: "grab",
     display: "inline-block",
     width: "100%",
-    touchAction: "pan-y",
+    touchAction: "none",
   };
   return (
     <div ref={setNodeRef} {...listeners} {...attributes} style={style}>
